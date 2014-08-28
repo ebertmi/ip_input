@@ -12,7 +12,9 @@ Binden Sie einfach die Datei ```ip_input.h``` ein.
 ### Funktionen
 **GetChar**
 ```c
-char GetChar(void);```
+char GetChar(void);
+```
+
 Liest eine Zeile Text aus dem Standard-Input-Stream und gibt den
 eingelesenen char zurück. Falls kein Text eingegeben wurde, wird der
 Benutzer zur wiederholten Eingabe aufgefordert. Leerzeichen am Anfang
@@ -20,6 +22,7 @@ und am Ende der Zeile werden ignoriert. Falls die Zeile nicht gelesen
 werden kann wird ```CHAR_MAX``` zurückgegeben.
 
 **Beispiel:**
+
 ```c
 #include <stdio.h>
 #include "ip_input.h"
@@ -33,11 +36,15 @@ int main (void)
 
   return 0;
 }
-```  
+```
+
 <br/>
 **GetDouble**
+
 ```c
-double GetDouble(void);```
+double GetDouble(void);
+```
+
 Liest eine Zeile Text aus dem Standard-Input-Stream und gibt den
 eingelesenen double Wert (so genau wie möglich) zurück. Falls der
 eingegebene Text nicht als double interpretiert werden kann, wird
@@ -47,6 +54,7 @@ underflow geprüft. Falls die Zeile nicht gelesen werden konnte, wird
 ```DBL_MAX``` zurückgegeben.
 
 **Beispiel:**
+
 ```c
 #include <stdio.h>
 #include "ip_input.h"
@@ -60,7 +68,9 @@ int main (void)
   printf("Ihre Groeße beträgt %.2lf cm.", height);
 
   return 0;
-}```
+}
+```
+
 <br />
 
 **GetFloat**
@@ -89,8 +99,11 @@ underflow geprüft. Falls die Zeile nicht gelesen werden konnte, wird
    return 0;
  }
  ```
+
 <br />
+
 **GetInt**
+
 ```c
 int GetInt(void);
 ```
@@ -103,6 +116,7 @@ underflow geprüft. Falls die Zeile nicht gelesen werden konnte, wird
 ```INT_MAX``` zurückgegeben.
 
 **Beispiel:**
+
 ```c
 #include <stdio.h>
 #include "ip_input.h"
@@ -119,11 +133,14 @@ int main (void)
   return 0;
 }
 ```
+
 <br/>
 **GetLong**
+
 ```c
 long long GetLongLong(void);
 ```
+
 Liest eine Zeile Text aus dem Standard-Input-Stream und gibt den
 eingelesenen long long Wert im Bereich von ```[-2^63 + 1, 2^63 - 2]``` zurück. Falls der
 eingegebene Text nicht als long long interpretiert werden kann, wird
