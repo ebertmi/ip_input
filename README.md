@@ -7,10 +7,16 @@ Die Bibliothekt ist für die Verwendung in der *Vorlesung Informatik
 und Programmieren I* an der Hochschule Coburg gedacht.
 
 ## Verwendung
-Binden Sie einfach die Datei ```ip_input.h``` ein.
+Binden Sie einfach die Datei ```ip_input.h``` ein. Die VM findet die
+Datei automatisch. Falls Sie die Datei selbst verwenden möchten, müssen
+Sie diese beim kompilieren mit angeben. Zum Beispiel so:
+```cmd
+>> gcc example.c ip_input.c
+```
 
-### Funktionen
-**GetChar**
+<br/>
+
+## GetChar
 ```c
 char GetChar(void);
 ```
@@ -39,7 +45,7 @@ int main (void)
 ```
 
 <br/>
-**GetDouble**
+## GetDouble
 
 ```c
 double GetDouble(void);
@@ -73,7 +79,7 @@ int main (void)
 
 <br />
 
-**GetFloat**
+## GetFloat
 
 Liest eine Zeile Text aus dem Standard-Input-Stream und gibt den
 eingelesenen float Wert (so genau wie möglich) zurück. Falls der
@@ -102,7 +108,7 @@ underflow geprüft. Falls die Zeile nicht gelesen werden konnte, wird
 
 <br />
 
-**GetInt**
+## GetInt
 
 ```c
 int GetInt(void);
@@ -135,7 +141,7 @@ int main (void)
 ```
 
 <br/>
-**GetLong**
+## GetLong
 
 ```c
 long long GetLongLong(void);
@@ -150,7 +156,7 @@ underflow geprüft. Falls die Zeile nicht gelesen werden konnte, wird
 ```LLONG_MAX``` zurückgegeben.
 <br/>
 
-**GetString**
+## GetString
 
 Liest eine Zeile aus dem Standard-Input-Stream und gibt diese
 als char *, zurück. "Return" (Neue Zeile) wird abgeschnitten.
