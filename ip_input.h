@@ -1,11 +1,8 @@
 /****************************************************************************
- * CS50 Library 3.0
+ * ip_input library for Informatik und Programmieren I course at the
+ * university of coburg.
  *
- * https://manual.cs50.net/Library
- *
- * Glenn Holloway <holloway@eecs.harvard.edu>
- * David J. Malan <malan@harvard.edu>
- *
+ * Based on cs50 library by Glenn Holloway
  * Based on Eric Roberts' genlib.c and simpio.c.
  *
  * Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License
@@ -21,82 +18,66 @@
 #include <stdlib.h>
 
 
-/*
- * Our own data type for string variables.
+/* Liest eine Zeile Text aus dem Standard-Input-Stream und gibt den
+ * eingelesenen char zurück. Falls kein Text eingegeben wurde, wird der
+ * Benutzer zur wiederholten Eingabe aufgefordert. Leerzeichen am Anfang
+ * und am Ende der Zeile werden ignoriert. Falls die Zeile nicht gelesen
+ * werden kann wird CHAR_MAX zurückgegeben.
  */
+char GetChar(void);
 
-typedef char *string;
 
-
-/*
- * Reads a line of text from standard input and returns the equivalent
- * char; if text does not represent a char, user is prompted to retry.
- * Leading and trailing whitespace is ignored.  If line can't be read,
- * returns CHAR_MAX.
+/* Liest eine Zeile Text aus dem Standard-Input-Stream und gibt den
+ * eingelesenen double Wert (so genau wie möglich) zurück. Falls der
+ * eingegebene Text nicht als double interpretiert werden kann, wird
+ * der Benutzer zur erneuten Eingabe aufgefordert. Leerzeichen am Anfang
+ * und am Ende der Zeile werden ignoriert. Es wird nicht auf overflow und
+ * underflow geprüft. Falls die Zeile nicht gelesen werden konnte, wird
+ * DBL_MAX zurückgegeben.
  */
-
-char 
-GetChar(void);
+double GetDouble(void);
 
 
-/*
- * Reads a line of text from standard input and returns the equivalent
- * double as precisely as possible; if text does not represent a
- * double, user is prompted to retry.  Leading and trailing whitespace
- * is ignored.  For simplicity, overflow and underflow are not detected.
- * If line can't be read, returns DBL_MAX.
+/* Liest eine Zeile Text aus dem Standard-Input-Stream und gibt den
+ * eingelesenen float Wert (so genau wie möglich) zurück. Falls der
+ * eingegebene Text nicht als float interpretiert werden kann, wird
+ * der Benutzer zur erneuten Eingabe aufgefordert. Leerzeichen am Anfang
+ * und am Ende der Zeile werden ignoriert. Es wird nicht auf overflow und
+ * underflow geprüft. Falls die Zeile nicht gelesen werden konnte, wird
+ * FLT_MAX zurückgegeben.
  */
-
-double 
-GetDouble(void);
+float GetFloat(void);
 
 
-/*
- * Reads a line of text from standard input and returns the equivalent
- * float as precisely as possible; if text does not represent a float,
- * user is prompted to retry.  Leading and trailing whitespace is ignored.
- * For simplicity, overflow and underflow are not detected.  If line can't
- * be read, returns FLT_MAX.
+/* Liest eine Zeile Text aus dem Standard-Input-Stream und gibt den
+ * eingelesenen int Wert im Bereich von [-2^31 + 1, 2^31 - 2] zurück. Falls der
+ * eingegebene Text nicht als int interpretiert werden kann, wird
+ * der Benutzer zur erneuten Eingabe aufgefordert. Leerzeichen am Anfang
+ * und am Ende der Zeile werden ignoriert. Es wird nicht auf overflow und
+ * underflow geprüft. Falls die Zeile nicht gelesen werden konnte, wird
+ * INT_MAX zurückgegeben.
  */
-
-float 
-GetFloat(void);
+int GetInt(void);
 
 
-/*
- * Reads a line of text from standard input and returns it as an
- * int in the range of [-2^31 + 1, 2^31 - 2], if possible; if text
- * does not represent such an int, user is prompted to retry.  Leading
- * and trailing whitespace is ignored.  For simplicity, overflow is not
- * detected.  If line can't be read, returns INT_MAX.
+/* Liest eine Zeile Text aus dem Standard-Input-Stream und gibt den
+ * eingelesenen long long Wert im Bereich von [-2^63 + 1, 2^63 - 2] zurück. Falls der
+ * eingegebene Text nicht als long long interpretiert werden kann, wird
+ * der Benutzer zur erneuten Eingabe aufgefordert. Leerzeichen am Anfang
+ * und am Ende der Zeile werden ignoriert. Es wird nicht auf overflow und
+ * underflow geprüft. Falls die Zeile nicht gelesen werden konnte, wird
+ * LLONG_MAX zurückgegeben.
  */
-
-int 
-GetInt(void);
+long long GetLongLong(void);
 
 
-/*
- * Reads a line of text from standard input and returns an equivalent
- * long long in the range [-2^63 + 1, 2^63 - 2], if possible; if text
- * does not represent such a long long, user is prompted to retry.
- * Leading and trailing whitespace is ignored.  For simplicity, overflow
- * is not detected.  If line can't be read, returns LLONG_MAX.
+/* Liest eine Zeile aus dem Standard-Input-Stream und gibt diese
+ * als char *, zurück. "Return" (Neue Zeile) wird abgeschnitten.
+ * Falls nur eine "Return" eingegeben wird, liefert die Funktion
+ * "" zurück. Der char * wird auf dem Heap abgespeichert und muss
+ * dementsprechend mit free gelöscht werden.
  */
-
-long long 
-GetLongLong(void);
-
-
-/*
- * Reads a line of text from standard input and returns it as a
- * string (char *), sans trailing newline character.  (Ergo, if
- * user inputs only "\n", returns "" not NULL.)  Returns NULL
- * upon error or no input whatsoever (i.e., just EOF).  Leading
- * and trailing whitespace is not ignored.  Stores string on heap
- * (via malloc); memory must be freed by caller to avoid leak.
- */
-
-string GetString(void);
+char * GetString(void);
 
 
 
