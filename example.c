@@ -3,11 +3,10 @@
 
 int main (void)
 {
-  char* firstname;
-  printf("Bitte geben Sie ihren Vornamen ein: ");
-  firstname = GetString();
-  printf("Hallo %s!", firstname);
+  int input;
+  printf("Bitte geben Sie eine Zahl im Oktal-Format ein: ");
+  input = GetInt('o');
+  printf("in dezimal: %d", input);
 
-  free(firstname); // Speicher wieder freigeben
   return 0;
 }

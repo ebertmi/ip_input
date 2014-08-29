@@ -55,9 +55,13 @@ float GetFloat(void);
  * der Benutzer zur erneuten Eingabe aufgefordert. Leerzeichen am Anfang
  * und am Ende der Zeile werden ignoriert. Es wird nicht auf overflow und
  * underflow geprüft. Falls die Zeile nicht gelesen werden konnte, wird
- * INT_MAX zurückgegeben.
+ * INT_MAX zurückgegeben. Der Parameter char base steht für das zu lesende
+ * Zahlenformat (Basis). 'd'
+ * - 'd' für dezimal
+ * - 'o' für oktal
+ * - 'x' für hex
  */
-int GetInt(void);
+int GetInt(char base);
 
 
 /* Liest eine Zeile Text aus dem Standard-Input-Stream und gibt den

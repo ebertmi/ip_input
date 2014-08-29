@@ -111,7 +111,7 @@ underflow geprüft. Falls die Zeile nicht gelesen werden konnte, wird
 ## GetInt
 
 ```c
-int GetInt(void);
+int GetInt(char base);
 ```
 Liest eine Zeile Text aus dem Standard-Input-Stream und gibt den
 eingelesenen int Wert im Bereich von ```[-2^31 + 1, 2^31 - 2]``` zurück. Falls der
@@ -119,7 +119,11 @@ eingegebene Text nicht als int interpretiert werden kann, wird
 der Benutzer zur erneuten Eingabe aufgefordert. Leerzeichen am Anfang
 und am Ende der Zeile werden ignoriert. Es wird nicht auf overflow und
 underflow geprüft. Falls die Zeile nicht gelesen werden konnte, wird
-```INT_MAX``` zurückgegeben.
+```INT_MAX``` zurückgegeben.Der Parameter ```char base``` steht für das zu lesende
+Zahlenformat (Basis).
+- 'd' für dezimal
+- 'o' für oktal
+- 'x' für hex
 
 **Beispiel:**
 
@@ -132,8 +136,8 @@ int main (void)
   int num;
   int divisor;
   printf("Bitte geben Sie eine Zahl und einen Teiler ein: ");
-  num = GetInt();
-  divisor = GetInt();
+  num = GetInt('d'); // Ganzahl zur Basis 10
+  divisor = GetInt('d'); // Ganzahl zur Basis 10
   printf("Zahl %% Teiler = %d", num % divisor);
 
   return 0;

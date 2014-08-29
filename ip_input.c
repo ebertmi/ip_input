@@ -122,9 +122,13 @@ float GetFloat(void)
  * der Benutzer zur erneuten Eingabe aufgefordert. Leerzeichen am Anfang
  * und am Ende der Zeile werden ignoriert. Es wird nicht auf overflow und
  * underflow geprüft. Falls die Zeile nicht gelesen werden konnte, wird
- * INT_MAX zurückgegeben.
+ * INT_MAX zurückgegeben. Der Parameter char base steht für das zu lesende
+ * Zahlenformat (Basis). 'd'
+ * - 'd' für dezimal
+ * - 'o' für oktal
+ * - 'x' für hex
  */
-int GetInt(void)
+int GetInt(char base)
 {
     // try to get an int from user
     while (true)
@@ -137,7 +141,14 @@ int GetInt(void)
         // return an int if only an int (possibly with
         // leading and/or trailing whitespace) was provided
         int n; char c;
-        if (sscanf(line, " %d %c", &n, &c) == 1)
+        int ret_val;
+        switch(base){
+            case 'o': ret_val = sscanf(line, " %o %c", &n, &c); break;
+            case 'x': ret_val = sscanf(line, " %x %c", &n, &c); break;
+            case 'd':
+            default: ret_val = sscanf(line, " %d %c", &n, &c); break;
+        }
+        if (ret_val == 1)
         {
             free(line);
             return n;
