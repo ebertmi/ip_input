@@ -127,6 +127,7 @@ float GetFloat(void)
  * - 'd' für dezimal
  * - 'o' für oktal
  * - 'x' für hex
+ * - 'u' für unsigned int
  */
 int GetInt(char base)
 {
@@ -145,6 +146,7 @@ int GetInt(char base)
         switch(base){
             case 'o': ret_val = sscanf(line, " %o %c", &n, &c); break;
             case 'x': ret_val = sscanf(line, " %x %c", &n, &c); break;
+						case 'u': ret_val = sscanf(line, " %u %c", &n, &c); break;
             case 'd':
             default: ret_val = sscanf(line, " %d %c", &n, &c); break;
         }
@@ -159,6 +161,14 @@ int GetInt(char base)
             printf("Wiedeholen: ");
         }
     }
+}
+
+/*
+	Handy Shortcut function
+*/
+int GetInt(char base)
+{
+	return GetInt('d');
 }
 
 /* Liest eine Zeile Text aus dem Standard-Input-Stream und gibt den

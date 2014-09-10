@@ -60,6 +60,7 @@ float GetFloat(void);
  * - 'd' für dezimal
  * - 'o' für oktal
  * - 'x' für hex
+ * - 'u' für unsigned int
  */
 int GetInt(char base);
 
