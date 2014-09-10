@@ -145,7 +145,7 @@ int main (void)
 ```
 
 <br/>
-## GetLong
+## GetLongLong
 
 ```c
 long long GetLongLong(void);
