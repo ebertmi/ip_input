@@ -163,14 +163,6 @@ int GetInt(char base)
     }
 }
 
-/*
-	Handy Shortcut function
-*/
-int GetInt(char base)
-{
-	return GetInt('d');
-}
-
 /* Liest eine Zeile Text aus dem Standard-Input-Stream und gibt den
  * eingelesenen long long Wert im Bereich von [-2^63 + 1, 2^63 - 2] zurück. Falls der
  * eingegebene Text nicht als long long interpretiert werden kann, wird
