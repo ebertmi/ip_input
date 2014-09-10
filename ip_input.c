@@ -42,7 +42,7 @@ char GetChar(void)
         else
         {
             free(line);
-            printf("Wiedeholen: ");
+            printf("Wiederholen: ");
         }
     }
 }
@@ -77,7 +77,7 @@ double GetDouble(void)
         else
         {
             free(line);
-            printf("Wiedeholen: ");
+            printf("Wiederholen: ");
         }
     }
 }
@@ -111,7 +111,7 @@ float GetFloat(void)
         else
         {
             free(line);
-            printf("Wiedeholen: ");
+            printf("Wiederholen: ");
         }
     }
 }
@@ -158,7 +158,7 @@ int GetInt(char base)
         else
         {
             free(line);
-            printf("Wiedeholen: ");
+            printf("Wiederholen: ");
         }
     }
 }
@@ -192,7 +192,7 @@ long long GetLongLong(void)
         else
         {
             free(line);
-            printf("Wiedeholen: ");
+            printf("Wiederholen: ");
         }
     }
 }
