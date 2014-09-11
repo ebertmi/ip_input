@@ -36,6 +36,7 @@ gcc example.c -lip_input
 
 Bei der Verwendung mit Eclipse, muss die Bibliothek noch in den Project Properties hinzugefügt werden.
 Dazu sind folgende Schritte nötig:
+
 1. Auf den Reiter *Projects* klicken
 2. Auf Properties (ganz unten) klicken
 3. Es öffnet sich ein Dialog
