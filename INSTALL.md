@@ -2,6 +2,9 @@
 
 In order to install the ip_input library on a linux (ubuntu) system follow the next steps.
 
+**Attention**
+You need super user privileges! ```sudo su```
+
 ```shell
 gcc -c -ggdb ip_input.c -o ip_input.o
 ar rcs libip_input.a ip_input.o

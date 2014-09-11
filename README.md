@@ -3,17 +3,17 @@
 ## Beschreibung
 Die Bibliothek stellt einfache Funktionen zum Einlesen der
 Standarddatentypen aus dem Standard-Input-Puffer zur Verfügung.
-Die Bibliothekt ist für die Verwendung in der *Vorlesung Informatik
+Die Bibliothek ist für die Verwendung in der *Vorlesung Informatik
 und Programmieren I* an der Hochschule Coburg gedacht.
 
 ## Verwendung
 Binden Sie einfach die Datei ```ip_input.h``` ein. Die VM findet die
 Datei automatisch. Falls Sie die Datei selbst verwenden möchten, müssen
-Sie diese beim kompilieren mit angeben. Zum Beispiel so:
+Sie diese beim Kompilieren mit angeben. Zum Beispiel so:
 
 ###Ohne Installation
-Bei der Verwendung ohne Installation muss beim Kompilieren die ip_input.c
-Datei direkt mit angegeben werden.
+Bei der Verwendung ohne Installation muss beim Kompilieren die Datei ip_input.c
+direkt mit angegeben werden.
 ```cmd
 >> gcc example.c ip_input.c
 ```
@@ -58,7 +58,7 @@ Liest eine Zeile Text aus dem Standard-Input-Stream und gibt den
 eingelesenen char zurück. Falls kein Text eingegeben wurde, wird der
 Benutzer zur wiederholten Eingabe aufgefordert. Leerzeichen am Anfang
 und am Ende der Zeile werden ignoriert. Falls die Zeile nicht gelesen
-werden kann wird ```CHAR_MAX``` zurückgegeben.
+werden kann, wird ```CHAR_MAX``` zurückgegeben.
 
 **Beispiel:**
 
