@@ -10,11 +10,43 @@ und Programmieren I* an der Hochschule Coburg gedacht.
 Binden Sie einfach die Datei ```ip_input.h``` ein. Die VM findet die
 Datei automatisch. Falls Sie die Datei selbst verwenden möchten, müssen
 Sie diese beim kompilieren mit angeben. Zum Beispiel so:
+
+###Ohne Installation
+Bei der Verwendung ohne Installation muss beim Kompilieren die ip_input.c
+Datei direkt mit angegeben werden.
 ```cmd
 >> gcc example.c ip_input.c
 ```
+Zusätzlich sollte diese folgendermaßer eingebunden sein:
+```c
+#include "ip_input.h"
+```
 
-<br/>
+###Vorinstalliert (Virtuelle Maschine IP1)
+Auf der virtuellen Maschine, die Sie verwenden können, ist die Bibliothek
+bereits vorinstalliert. Diese kann nun folgendermaßen eingebunden werden:
+```c
+#include <ip_input.h>
+```
+Dabei ist zu beachten, dass beim Kompilieren auf der Konsole noch folgendes Flag
+gesetzt werden muss (kein Leerzeichen zwischen -l und dem Namen):
+```bash
+gcc example.c -lip_input
+```
+
+Bei der Verwendung mit Eclipse, muss die Bibliothek noch in den Project Properties hinzugefügt werden.
+Dazu sind folgende Schritte nötig:
+1. Auf den Reiter *Projects* klicken
+2. Auf Properties (ganz unten) klicken
+3. Es öffnet sich ein Dialog
+4. Unter *C/C++ General* auf *Paths and Symbols* klicken
+5. Im Reiter Libraries auf *Add* klicken
+6. Unter *File:* nur *ip_input* eingeben und mit *OK* bestätigen
+7. Unten rechts auf *Apply* klicken und ggf. einen Dialog bestätigen
+8. Abschließend den Hauptdialog mit *OK* unten rechts schließen
+
+###Installation
+Sie finden eine Anleitung zur Installation [hier](INSTALL.md)
 
 ## GetChar
 ```c
