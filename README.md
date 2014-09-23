@@ -114,6 +114,10 @@ int main (void)
 
 ## GetFloat
 
+```c
+float GetFloat(void);
+```
+
 Liest eine Zeile Text aus dem Standard-Input-Stream und gibt den
 eingelesenen float Wert (so genau wie möglich) zurück. Falls der
 eingegebene Text nicht als float interpretiert werden kann, wird
@@ -146,6 +150,7 @@ underflow geprüft. Falls die Zeile nicht gelesen werden konnte, wird
 ```c
 int GetInt(char base);
 ```
+
 Liest eine Zeile Text aus dem Standard-Input-Stream und gibt den
 eingelesenen int Wert im Bereich von ```[-2^31 + 1, 2^31 - 2]``` zurück. Falls der
 eingegebene Text nicht als int interpretiert werden kann, wird
@@ -157,6 +162,7 @@ Zahlenformat (Basis).
 - 'd' für dezimal
 - 'o' für oktal
 - 'x' für hex
+- 'u' für unsigned int
 
 **Beispiel:**
 
@@ -194,6 +200,10 @@ underflow geprüft. Falls die Zeile nicht gelesen werden konnte, wird
 <br/>
 
 ## GetString
+
+```c
+char * GetString(void);
+```
 
 Liest eine Zeile aus dem Standard-Input-Stream und gibt diese
 als char *, zurück. "Return" (Neue Zeile) wird abgeschnitten.
